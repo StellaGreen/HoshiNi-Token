@@ -207,31 +207,31 @@ describe("Calculator", () => {
   });
 
   it("should emit event with result", async function () {
-    await expect(calculator.connect(owner).result(1,2)).to.emit(calculator, "Result").withArgs(owner.address, 3)
+    await expect(calculator.connect(owner).add(1,2)).to.emit(calculator, "Result").withArgs(owner.address, 3)
   });
   });
   
   describe('function sub', function () {
   it("should emit event with result", async function () {
-    await expect(calculator.connect(alice).result(5,2)).to.emit(calculator, "Result").withArgs(alice.address, 3)
+    await expect(calculator.connect(alice).sub(5,2)).to.emit(calculator, "Result").withArgs(alice.address, 3)
   });
   });
   
   describe('function mul', function () {
   it("should emit event with result", async function () {
-    await expect(calculator.connect(alice).result(5,2)).to.emit(calculator, "Result").withArgs(alice.address, 10)
+    await expect(calculator.connect(alice).mul(5,2)).to.emit(calculator, "Result").withArgs(alice.address, 10)
   });
   });
   
   describe('function div', function () {
   it("should emit event with result", async function () {
-    await expect(calculator.connect(alice).result(6,2)).to.emit(calculator, "Result").withArgs(alice.address, 3)
+    await expect(calculator.connect(alice).div(6,2)).to.emit(calculator, "Result").withArgs(alice.address, 3)
   });
   });
   
   describe('function mod', function () {
   it("should emit event with result", async function () {
-    await expect(calculator.connect(alice).result(6,4)).to.emit(calculator, "Result").withArgs(alice.address, 2)
+    await expect(calculator.connect(alice).mod(6,4)).to.emit(calculator, "Result").withArgs(alice.address, 2)
   });
   });
   
