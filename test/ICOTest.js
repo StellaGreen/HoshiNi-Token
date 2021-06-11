@@ -234,13 +234,4 @@ describe("Calculator", () => {
     await expect(calculator.connect(alice).mod(6,4)).to.emit(calculator, "Result").withArgs(alice.address, 2)
   });
   });
-  
-  it("should return the total amount of profit calculator", async function () {
-    await calculator.connect(alice).add(1,2);
-    await calculator.connect(bob).sub(1,2);
-    await calculator.connect(bob).mul(1,2);
-    await calculator.connect(alice).mod(1,2);
-    await calculator.connect(alice).add(1,2);
-    expect(await calculator.connect(owner).gainCalcul()).to.equal(5)
-  });
   });
